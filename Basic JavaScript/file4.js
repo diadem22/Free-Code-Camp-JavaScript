@@ -1,4 +1,4 @@
-// Task 62
+// Task 64: Comparison with the Strict Inequality Operator
 // Setup
 function testStrictNotEqual(val) {
   if (val !== 17) {
@@ -9,7 +9,7 @@ function testStrictNotEqual(val) {
 }
 testStrictNotEqual(10);
 
-// Task 63
+// Task 65: Comparison with the Greater Than Operator
 function testGreaterThan(val) {
   if (val > 100) {
     // Change this line
@@ -23,7 +23,7 @@ function testGreaterThan(val) {
 }
 testGreaterThan(10);
 
-// Task 64
+// Task 66: Comparison with the Greater Than Or Equal To Operator
 function testGreaterOrEqual(val) {
   if (val >= 20) {
     // Change this line
@@ -37,7 +37,7 @@ function testGreaterOrEqual(val) {
 }
 testGreaterOrEqual(10);
 
-// Task 65
+// Task 67: Comparison with the Less Than Operator
 function testLessThan(val) {
   if (val < 25) {
     // Change this line
@@ -51,7 +51,7 @@ function testLessThan(val) {
 }
 testLessThan(10);
 
-// Task 66
+// Task 68:  Comparison with the Less Than Or Equal To Operator
 function testLessOrEqual(val) {
   if (val <= 12) {
     // Change this line
@@ -65,7 +65,7 @@ function testLessOrEqual(val) {
 }
 testLessOrEqual(10);
 
-// Task 67
+// Task 69: Comparisons with the Logical And Operator
 function testLogicalAnd(val) {
   // Only change code below this line
   if (val <= 50 && val >= 25) {
@@ -77,7 +77,7 @@ function testLogicalAnd(val) {
 
 testLogicalAnd(10);
 
-// Task 68
+// Task 70: Comparisons with the Logical Or Operator
 function testLogicalOr(val) {
   // Only change code below this line
   if (val < 10 || val > 20) {
@@ -89,7 +89,7 @@ function testLogicalOr(val) {
 
 testLogicalOr(15);
 
-// Task 69
+// Task 71: Introducing Else Statements
 function testElse(val) {
   let result = '';
   // Only change code below this line
@@ -104,7 +104,7 @@ function testElse(val) {
 
 testElse(4);
 
-// Task 70
+// Task 72: Introducing Else  If Statements
 function testElseIf(val) {
   if (val > 10) {
     return 'Greater than 10';
@@ -116,7 +116,7 @@ function testElseIf(val) {
 }
 testElseIf(7);
 
-// Task 71
+// Task 73: Logical Order in If Else Statements
 function orderMyLogic(val) {
   if (val < 5) {
     return 'Less than 5';
@@ -129,7 +129,7 @@ function orderMyLogic(val) {
 
 orderMyLogic(7);
 
-// Task 72
+// Task 74: Chaining If Else Statements
 function testSize(num) {
   // Only change code below this line
   if (num < 5) {
@@ -150,7 +150,7 @@ function testSize(num) {
 
 testSize(7);
 
-// Task 73
+// Task 75: Golf Code
 const names = [
   'Hole-in-one!',
   'Eagle',
@@ -185,7 +185,7 @@ function golfScore(par, strokes) {
 
 golfScore(5, 4);
 
-// Task 74
+// Task 76: Selecting from Many Options with Switch Statements
 function caseInSwitch(val) {
   let answer = '';
   // Only change code below this line
@@ -210,7 +210,7 @@ function caseInSwitch(val) {
 
 caseInSwitch(1);
 
-// Task 75
+// Task 77: Adding a Default Option in Switch Statements
 function switchOfStuff(val) {
   let answer = '';
   // Only change code below this line
@@ -234,7 +234,7 @@ function switchOfStuff(val) {
 
 switchOfStuff(1);
 
-// Task 76
+// Task 78: Multiple Identical Options in Switch Statements
 function sequentialSizes(val) {
   let answer = '';
   // Only change code below this line
@@ -261,7 +261,7 @@ function sequentialSizes(val) {
 
 sequentialSizes(1);
 
-// Task 77
+// Task 79: Replacing If Else Chains with Switch
 function chainToSwitch(val) {
   let answer = '';
   // Only change code below this line
@@ -290,7 +290,7 @@ function chainToSwitch(val) {
 
 chainToSwitch(7);
 
-// Task 78
+// Task 80: Returning Boolean Values from Functions
 function isLess(a, b) {
   // Only change code below this line
   return a < b;
@@ -299,7 +299,7 @@ function isLess(a, b) {
 
 isLess(10, 15);
 
-// Task 79
+// Task 81: Return Early Pattern for Functions
 function abTest(a, b) {
   // Only change code below this line
   if (a < 0 || b < 0) {
@@ -311,7 +311,7 @@ function abTest(a, b) {
 
 abTest(2, 2);
 
-// Task 80
+// Task 82: Counting Cards
 let count = 0;
 
 function cc(card) {
@@ -348,7 +348,7 @@ cc(7);
 cc('K');
 cc('A');
 
-// Task 81
+// Task 83: Build JavaScript Objects
 const myDog = {
   // Only change code below this line
   name: 'Jojo',
@@ -359,7 +359,7 @@ const myDog = {
   // Only change code above this line
 };
 
-// Task 82
+// Task 84: Accessing Object Properties with Dot Notation
 // Setup
 const testObj = {
   hat: 'ballcap',
@@ -371,7 +371,7 @@ const testObj = {
 const hatValue = testObj.hat; // Change this line
 const shirtValue = testObj.shirt; // Change this line
 
-// Test 83
+// Test 85: Accessing Object Properties with Bracket Notation
 // Setup
 const testObj = {
   'an entree': 'hamburger',
@@ -383,7 +383,7 @@ const testObj = {
 const entreeValue = testObj['an entree']; // Change this line
 const drinkValue = testObj['the drink']; // Change this line
 
-// Test 84
+// Test 86: Accessing Object Properties with Variables
 // Setup
 const testObj = {
   12: 'Namath',
@@ -395,7 +395,7 @@ const testObj = {
 const playerNumber = 16; // Change this line
 const player = testObj[playerNumber]; // Change this line
 
-// Test 85
+// Test 87: Updating Object Properties
 // Setup
 const myDog = {
   name: 'Coder',

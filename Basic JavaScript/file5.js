@@ -1,4 +1,4 @@
-// Test 86
+// Test 88: Add New Properties to a JavaScript Object
 const myDog = {
   name: 'Happy Coder',
   legs: 4,
@@ -8,7 +8,7 @@ const myDog = {
 
 myDog.bark = 'woof';
 
-// Test 87
+// Test 89: Delete Properties from a JavaScript Object
 // Setup
 const myDog = {
   name: 'Happy Coder',
@@ -20,7 +20,7 @@ const myDog = {
 // Only change code below this line
 delete myDog.tails;
 
-// Test 88
+// Test 90: Using Objects for Lookups
 // Setup
 function phoneticLookup(val) {
   let result = '';
@@ -39,7 +39,18 @@ function phoneticLookup(val) {
 }
 phoneticLookup('charlie');
 
-// Test 89
+// Test 91: Testing Objects for Properties
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } else {
+    return 'Not Found';
+  }
+  // Only change code above this line
+}
+
+// Test 92: Manipulating Complex Objects
 const myMusic = [
   {
     artist: 'Billy Joel',
@@ -56,7 +67,7 @@ const myMusic = [
   },
 ];
 
-// Test 90
+// Test 93: Accessing Nested Objects
 const myStorage = {
   car: {
     inside: {
@@ -70,7 +81,7 @@ const myStorage = {
 };
 const gloveBoxContents = myStorage.car.inside['glove box'];
 
-// Test 91
+// Test 94: Accessing Nested Arrays
 const myPlants = [
   {
     type: 'flowers',
@@ -83,7 +94,7 @@ const myPlants = [
 ];
 const secondTree = myPlants[1].list[1];
 
-// Test 92
+// Test 95: Record Collection
 // Setup
 const recordCollection = {
   2548: {
@@ -122,7 +133,7 @@ function updateRecords(records, id, prop, value) {
 }
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 
-// Test 93
+// Test 96: Iterate with JavaScript While Loops
 // Setup
 const myArray = [];
 // Only change code below this line
@@ -132,7 +143,7 @@ while (i >= 0) {
   i--;
 }
 
-// Test 94
+// Test 97: Iterate with JavaScript For Loops
 // Setup
 const myArray = [];
 // Only change code below this line
@@ -140,7 +151,7 @@ for (let i = 1; i < 6; i++) {
   myArray.push(i);
 }
 
-// Test 95
+// Test 98: Iterate Odd Numbers With a For Loop
 // Setup
 const myArray = [];
 // Only change code below this line
@@ -148,7 +159,7 @@ for (let i = 1; i < 10; i += 2) {
   myArray.push(i);
 }
 
-// Test 96
+// Test 99: Count Backwards With a For Loop
 // Setup
 const myArray = [];
 
@@ -157,7 +168,7 @@ for (let i = 9; i > 0; i -= 2) {
   myArray.push(i);
 }
 
-// Test 97
+// Test 100: Iterate Through an Array with a For Loop
 // Setup
 const myArr = [2, 3, 4, 5, 6];
 
@@ -167,7 +178,7 @@ for (let i = 0; i < myArr.length; i++) {
   total += myArr[i];
 }
 
-// Test 98
+// Test 101: Nesting For Loops
 function multiplyAll(arr) {
   let product = 1;
   // Only change code below this line
@@ -185,7 +196,7 @@ multiplyAll([
   [5, 6, 7],
 ]);
 
-// Test 99
+// Test 102: Iterate with JavaScript Do...While Loops
 // Setup
 const myArray = [];
 let i = 10;
@@ -196,7 +207,7 @@ do {
   i++;
 } while (i < 11);
 
-// Test 100
+// Test 103: Replace Loops using Recursion
 function sum(arr, n) {
   // Only change code below this line
   if (n <= 0) {
@@ -207,7 +218,7 @@ function sum(arr, n) {
   // Only change code above this line
 }
 
-// Test 101
+// Test 104: Profile Lookup
 // Setup
 const contacts = [
   {
