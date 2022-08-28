@@ -37,10 +37,9 @@ const myName = 'Ifeoluwa';
 const myStr = 'My name is ' + myName + 'and I am well!';
 
 // Task 31: Appending Variables to Strings
-let lastNameLength = 0;
-const lastName = 'Lovelace';
-// Only change code below this line
-lastNameLength = lastName.length;
+const someAdjective = 'Cool';
+let myStr = 'Learning to code is ';
+myStr += someAdjective;
 
 // Task 32: Find the Length of a String
 let lastNameLength = 0;
