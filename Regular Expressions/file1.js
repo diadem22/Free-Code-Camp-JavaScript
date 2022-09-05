@@ -30,7 +30,7 @@ let result = twinkleStar.match(starRegex); // Change this line
 
 // Task 7: Match Anything with Wildcard Period
 let exampleStr = "Let's have fun with regular expressions!";
-let unRegex = /un./; // Change this line
+let unRegex = /.un/; // Change this line
 let result = unRegex.test(exampleStr);
 
 // Task 8: Match Single Character with Multiple Possibilities
@@ -79,8 +79,22 @@ let rickyAndCal = 'Cal and Ricky both like racing.';
 let calRegex = /^Cal/; // Change this line
 let result = calRegex.test(rickyAndCal);
 
-// Task 17:
+// Task 17: Match Ending String Patterns
+let caboose = 'The last car on a train is the caboose';
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
 
-// Task
+// Task 18: Match All Letters and Numbers
+let quoteSample = 'The five boxing wizards jump quickly.';
+let alphabetRegexV2 = /\w/g; // Change this line
+let result = quoteSample.match(alphabetRegexV2).length;
 
-// Task
+// Task 19: Match Everything But Letters and Numbers
+let quoteSample = 'The five boxing wizards jump quickly.';
+let nonAlphabetRegex = /\W/g; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
+
+// Task 20: Match All Numbers
+let movieName = '2001: A Space Odyssey';
+let numRegex = /\d/g; // Change this line
+let result = movieName.match(numRegex).length;
