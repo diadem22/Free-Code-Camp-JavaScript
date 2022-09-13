@@ -52,14 +52,83 @@ console.log(
 );
 
 // Task 7: Copy Array Items Using slice()
+function forecast(arr) {
+  // Only change code below this line
+  let newArray = arr.slice(2, 4);
+  return newArray;
+}
+// Only change code above this line
+console.log(
+  forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'])
+);
 
+// Task 8: Copy an Array with the Spread Operator
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // Only change code below this line
+    newArr.push([...arr]);
+    // Only change code above this line
+    num--;
+  }
+  return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
 
-// Task
+// Task 9: Combine Arrays with the Spread Operator
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun']; // Change this line
+  return sentence;
+}
 
-// Task
+console.log(spreadOut());
 
-// Task
+// Task 10: Check For The Presence of an Element With indexOf()
+function quickCheck(arr, elem) {
+  // Only change code below this line
+  if (arr.indexOf(elem) >= 0) {
+    return true;
+  } else {
+    return false;
+  }
+  // Only change code above this line
+}
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
 
-// Task
+// Task 11: Iterate Through All an Array's Items Using For Loops
+function filteredArray(arr, elem) {
+  let newArr = [];
+  // Only change code below this line
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) == -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  // Only change code above this line
+  return newArr;
+}
 
-// Task
+console.log(
+  filteredArray(
+    [
+      [3, 2, 3],
+      [1, 6, 3],
+      [3, 13, 26],
+      [19, 3, 9],
+    ],
+    3
+  )
+);
+
+// Task 12: Create complex multi-dimensional arrays
+let myNestedArray = [
+  // Only change code below this line
+  ['unshift', false, 1, 2, 3, 'complex', 'nested'],
+  ['loop', 'shift', 6, 7, 1000, 'method'],
+  ['concat', false, true, 'spread', 'array', ['deep']],
+  ['mutate', 1327.98, 'splice', 'slice', 'push', [['deeper']]],
+  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth', [[['deepest']]]],
+
+  // Only change code above this line
+];
