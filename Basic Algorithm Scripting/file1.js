@@ -81,12 +81,28 @@ function repeatStringNumTimes(str, num) {
 
 repeatStringNumTimes('abc', 3);
 
-// Task 8:
+// Task 8: Truncate a String
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + '...';
+  } else {
+    return str;
+  }
+}
+truncateString('A-tisket a-tasket A green and yellow basket', 8);
 
-// Task
+// Task 9: Finders Keepers
+function findElement(arr, func) {
+  let num = 0;
+  return arr.find(func);
+}
 
-// Task
+findElement([1, 2, 3, 4], (num) => num % 2 === 0);
 
-// Task
+// Task 10: Boo who
+function booWho(bool) {
+  return typeof bool === 'boolean';
+}
 
-// Task
+booWho(null);
+
