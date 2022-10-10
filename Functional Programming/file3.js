@@ -1,4 +1,4 @@
-// Task 9: Use the filter Method to Extract Data from an Array
+// Task 15: Use the reduce Method to Analyze Data
 // The global variable
 const watchList = [
   {
@@ -119,81 +119,107 @@ const watchList = [
     Response: 'True',
   },
 ];
-// Only change code below this line
-const filteredList = watchList
-  .filter((item) => {
-    return parseFloat(item.imdbRating) >= 8.0;
-  })
-  .map((movie) => {
-    return {
-      title: movie.Title,
-      rating: movie.imdbRating,
-    };
-  });
-// Only change code above this line
-console.log(filteredList);
-
-// Task 10: Implement the filter Method on a Prototype
-// The global variable
-const s = [23, 65, 98, 5];
-
-Array.prototype.myFilter = function (callback) {
+function getRating(watchList) {
   // Only change code below this line
-  const newArray = [];
-  for (let i = 0; i < this.length; i++) {
-    if (callback(this[i]) === true) {
-      newArray.push(this[i]);
-    }
-  }
+  const averageRating =
+    watchList
+      .filter((film) => film.Director === 'Christopher Nolan')
+      .map((film) => Number(film.imdbRating))
+      .reduce((sumOfRatings, ratings) => sumOfRatings + ratings) /
+    watchList.filter((film) => film.Director === 'Christopher Nolan').length;
   // Only change code above this line
-  return newArray;
+  return averageRating;
+}
+console.log(getRating(watchList));
+
+// Task 16: Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem
+const squareList = (arr) => {
+  // Only change code below this line
+  return arr
+    .filter((num) => num > 0 && num % parseInt(num) === 0)
+    .map((num) => Math.pow(num, 2));
+  // Only change code above this line
 };
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
 
-const new_s = s.myFilter(function (item) {
-  return item % 2 === 1;
-});
-
-// Task 11: Return Part of an Array Using the slice Method
-function sliceArray(anim, beginSlice, endSlice) {
+// Task 17: Sort an Array Alphabetically using the sort Method
+function alphabeticalOrder(arr) {
   // Only change code below this line
-  const slicedArray = anim.slice(beginSlice, endSlice);
-  return slicedArray;
+  return arr.sort(function (a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
+  });
   // Only change code above this line
 }
 
-const inputAnim = ['Cat', 'Dog', 'Tiger', 'Zebra', 'Ant'];
-sliceArray(inputAnim, 1, 3);
+alphabeticalOrder(['a', 'd', 'c', 'a', 'z', 'g']);
 
-// Task 12: Remove Elements from an Array Using slice Instead of splice
-function nonMutatingSplice(cities) {
-  // Only change code below this line
-  return cities.slice(0, 3);
-  // Only change code above this line
-}
-const inputCities = ['Chicago', 'Delhi', 'Islamabad', 'London', 'Berlin'];
-nonMutatingSplice(inputCities);
+// Task 18: Return a Sorted Array Without Changing the Original Array
+const globalArray = [5, 6, 3, 2, 9];
 
-// Task 13: Combine Two Arrays Using the concat Method
-function nonMutatingConcat(original, attach) {
+function nonMutatingSort(arr) {
   // Only change code below this line
-  return original.concat(attach);
+  const arr2 = arr.concat([]);
+  return arr2.sort(function (a, b) {
+    return a - b;
+  });
+
   // Only change code above this line
 }
 
-const first = [1, 2, 3];
-const second = [4, 5];
-nonMutatingConcat(first, second);
+nonMutatingSort(globalArray);
 
-// Task 14: Add Elements to the End of an Array Using concat Instead of push
-function nonMutatingPush(original, newItem) {
+// Task 19: Split a String into an Array Using the split Method
+function splitify(str) {
   // Only change code below this line
-  return original.concat(newItem);
+  return str.split(/[^A-Za-z0-9_]/);
   // Only change code above this line
 }
-const first = [1, 2, 3];
-const second = [4, 5];
-nonMutatingPush(first, second);
 
+splitify('Hello World,I-am code');
 
+// Task 20: Combine an Array into a String Using the join Method
+function sentensify(str) {
+  // Only change code below this line
+  return str.split(/[^A-Za-z0-9_]/).join(' ');
+  // Only change code above this line
+}
+sentensify('May-the-force-be-with-you');
 
+// Task 21 Apply Functional Programming to Convert Strings to URL Slugs
+// Only change code below this line
+function urlSlug(title) {
+  return title.toLowerCase().trim().split(/\s+/).join('-');
+}
+// Only change code above this line
+urlSlug('A Mind Needs Books Like A Sword Needs A Whetstone');
 
+// Task 22: Use the every Method to Check that Every Element in an Array Meets a Criteria
+function checkPositive(arr) {
+  // Only change code below this line
+  return arr.every((numbers) => numbers > 0);
+  // Only change code above this line
+}
+
+checkPositive([1, 2, 3, -4, 5]);
+
+// Task 23: Use the some Method to Check that Any Elements in an Array Meet a Criteria
+function checkPositive(arr) {
+  // Only change code below this line
+  return arr.some((numbers) => numbers > 0);
+  // Only change code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
+
+// Task 24: Introduction to Currying and Partial Application
+function add(x) {
+  // Only change code below this line
+  return function (y) {
+    return function (z) {
+      return x + y + z;
+    };
+  };
+  // Only change code above this line
+}
+
+add(10)(20)(30);
