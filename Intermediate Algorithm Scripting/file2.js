@@ -95,10 +95,97 @@ function steamrollArray(arr, flattenedArr = []) {
 
 steamrollArray([1, [2], [3, [[4]]]]);
 
-// Task
+// Task 17: Binary Agents
+function binaryAgent(str) {
+  let arr = str.split(' ');
+  let res = '';
+  arr.forEach((string) => {
+    res += String.fromCharCode(parseInt(string, 2));
+  });
+  return res;
+}
 
-// Task
+binaryAgent(
+  '01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'
+);
 
-// Task
+// Task 18: Everything Be True
+function truthCheck(collection, pre) {
+  return collection.every((item) => {
+    return item.hasOwnProperty(pre) && Boolean(item[pre]);
+  });
+}
 
-// Task
+truthCheck(
+  [
+    { name: 'Quincy', role: 'Founder', isBot: false },
+    { name: 'Naomi', role: '', isBot: false },
+    { name: 'Camperbot', role: 'Bot', isBot: true },
+  ],
+  'isBot'
+);
+
+// Task 19: Arguments Optional
+function addTogether() {
+  const [first, second] = arguments;
+  if (typeof first !== 'number') return undefined;
+  if (arguments.length === 1) return (second) => addTogether(first, second);
+  if (typeof second !== 'number') return undefined;
+  return first + second;
+}
+
+addTogether(2, 3);
+
+// Task 20: Make a Person
+const Person = function (firstAndLast) {
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  let fullName = firstAndLast;
+
+  this.getFirstName = function () {
+    return fullName.split(' ')[0];
+  };
+  this.getLastName = function () {
+    return fullName.split(' ')[1];
+  };
+  this.getFullName = function () {
+    return fullName;
+  };
+  this.setFirstName = function (first) {
+    fullName = first + ' ' + fullName.split(' ')[1];
+  };
+
+  this.setLastName = function (last) {
+    fullName = fullName.split(' ')[0] + ' ' + last;
+  };
+
+  this.setFullName = function (firstAndLast) {
+    fullName = firstAndLast;
+  };
+};
+
+const bob = new Person('Bob Ross');
+bob.getFullName();
+
+// Task 21: Map the Debris
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  const newArr = [];
+  const x = 2 * Math.PI;
+
+  const solveOrbPeriod = function (obj) {
+    const y = Math.pow(earthRadius + obj.avgAlt, 3);
+    const z = Math.sqrt(y / GM);
+    const orbPeriod = Math.round(x * z);
+
+    return { name: obj.name, orbitalPeriod: orbPeriod };
+  };
+
+  for (let item in arr) {
+    newArr.push(solveOrbPeriod(arr[item]));
+  }
+  return newArr;
+}
+
+orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]);
